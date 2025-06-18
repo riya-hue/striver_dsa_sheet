@@ -1,0 +1,11 @@
+class Solution {
+    public int NnumbersSum(int N) {
+        // Base case: sum of first 0 numbers is 0
+        if (N == 0) {
+            return 0;
+        }
+        
+        // Recursive case: sum = N + sum of first (N-1) numbers
+        return N + NnumbersSum(N - 1);
+    }
+}
