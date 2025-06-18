@@ -1,0 +1,49 @@
+
+class Solution {
+    public int[] unionArray(int[] nums1, int[] nums2) {
+        List<Integer> result = new ArrayList<>();
+        int i = 0, j = 0;
+        int m = nums1.length, n = nums2.length;
+        
+        while (i < m && j < n) {
+            if (nums1[i] < nums2[j]) {
+                if (result.isEmpty() || result.get(result.size() - 1) != nums1[i]) {
+                    result.add(nums1[i]);
+                }
+                i++;
+            } else if (nums1[i] > nums2[j]) {
+                if (result.isEmpty() || result.get(result.size() - 1) != nums2[j]) {
+                    result.add(nums2[j]);
+                }
+                j++;
+            } else {
+                if (result.isEmpty() || result.get(result.size() - 1) != nums1[i]) {
+                    result.add(nums1[i]);
+                }
+                i++;
+                j++;
+            }
+        }
+        
+        while (i < m) {
+            if (result.isEmpty() || result.get(result.size() - 1) != nums1[i]) {
+                result.add(nums1[i]);
+            }
+            i++;
+        }
+        
+        while (j < n) {
+            if (result.isEmpty() || result.get(result.size() - 1) != nums2[j]) {
+                result.add(nums2[j]);
+            }
+            j++;
+        }
+        
+        int[] union = new int[result.size()];
+        for (int k = 0; k < result.size(); k++) {
+            union[k] = result.get(k);
+        }
+        return union;
+    }
+}
+this is optimized apprach right ans yes or no
