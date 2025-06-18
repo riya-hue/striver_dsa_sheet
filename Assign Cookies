@@ -1,0 +1,17 @@
+
+class Solution {
+    public int findMaximumCookieStudents(int[] Student, int[] Cookie) {
+        Arrays.sort(Student);
+        Arrays.sort(Cookie);
+        int n = Student.length;
+        int m = Cookie.length;
+        int l = 0, r = 0;
+        while (l < m && r < n) {
+            if (Cookie[l] >= Student[r]) {
+                r++;
+            }
+            l++;
+        }
+        return r;
+    }
+}
