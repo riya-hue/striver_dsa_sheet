@@ -1,0 +1,19 @@
+public class RecursivePrinter {
+    public static void printNTimes(int n, String message) {
+        // Base case - when to stop recursing
+        if (n <= 0) {
+            return;
+        }
+        
+        // Print the message
+        System.out.println(message);
+        
+        // Recursive case - call the function again with n-1
+        printNTimes(n - 1, message);
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        printNTimes(5, "Hello, Recursion!");
+    }
+}
