@@ -1,0 +1,11 @@
+public class Print1ToN {
+    public static void printNumbers(int current, int n) {
+        if (current > n) return;
+        System.out.println(current);
+        printNumbers(current + 1, n);
+    }
+    
+    public static void main(String[] args) {
+        printNumbers(1, 5);  // Start from 1
+    }
+}
