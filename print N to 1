@@ -1,0 +1,14 @@
+public class PrintNTo1 {
+    public static void printNumbers(int current, int n) {
+        if (current < 1) {  // Base case: stop when current < 1
+            return;
+        }
+        System.out.println(current);  // Print current number
+        printNumbers(current - 1, n);  // Recursive call (decrement current)
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+        printNumbers(n, n);  // Start from N
+    }
+}
