@@ -1,0 +1,21 @@
+class Solution {
+    public void reverse(int[] arr, int n) {
+        // Start the recursion with first and last indices
+        reverseArray(arr, 0, n-1);
+    }
+    
+    private void reverseArray(int[] arr, int start, int end) {
+        // Base case: stop when start meets or passes end
+        if (start >= end) {
+            return;
+        }
+        
+        // Swap elements at start and end positions
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        
+        // Recur for the next pair
+        reverseArray(arr, start + 1, end - 1);
+    }
+}
